@@ -3,69 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcmeCorp Support</title>
+    <title>Support | Illusion → Intuition</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
-    <div class="app-container">
-        <nav class="navbar">
-            <a href="account.html" class="logo">AcmeCorp</a>
-            <div class="nav-links">
-                <a href="contact.html" class="nav-link">Shop</a>
-                <a href="index.html" class="nav-link">Account</a>
-                <a href="products.html" class="nav-link">Support</a>
-                <a href="login.html" class="nav-link" style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 8px;">
-                    🛒 <span class="wishlist-counter" style="font-weight: 600;">0</span>
+
+<header class="site-header">
+    <nav class="navbar container">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">I</span>
+            <span>Illusion<span class="brand-arrow">→</span>Intuition</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            ☰
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="products.html" class="nav-link">Explore</a>
+            <a href="account.html" class="nav-link">Account</a>
+            <a href="contact.html" class="nav-link active">Support</a>
+            <a href="checkout.html" class="cart-link">
+                🛒 Cart
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <section class="page-header container">
+        <span class="eyebrow">SUPPORT</span>
+        <h1>How can we help?</h1>
+        <p>
+            Have a question about an illusion or the platform?
+            Send us a message.
+        </p>
+    </section>
+
+    <section class="container support-layout">
+
+        <div class="support-info">
+
+            <div class="support-info-card">
+                <div class="support-icon">?</div>
+                <h2>Need help?</h2>
+                <p>
+                    Tell us what you're experiencing and we'll help you
+                    understand the issue.
+                </p>
+            </div>
+
+            <div class="support-info-card">
+                <div class="support-icon">◎</div>
+                <h2>Explore first</h2>
+                <p>
+                    Many questions can be answered by exploring our
+                    interactive illusion library.
+                </p>
+
+                <a href="products.html" class="text-link">
+                    Browse illusions →
                 </a>
             </div>
-        </nav>
 
-        <main class="main-content">
-            <div style="max-width: 600px; margin: 2rem auto; position: relative;">
-                <div class="card" style="display: flex; flex-direction: column-reverse;">
-                    
-                    <form onsubmit="event.preventDefault(); addToCart({ id: 999, name: 'Random Item', price: 99 }); alert('Thank you! A random item was added to your cart.');" style="display: flex; flex-direction: column-reverse;">
-                        
-                        <div style="margin-top: 2rem;">
-                            <button type="submit" class="btn btn-primary chasing-button" style="width: 100%;" tabindex="1">
-                                Send Message
-                            </button>
-                        </div>
+        </div>
 
-                        <div class="form-group" style="display: flex; flex-direction: column-reverse;">
-                            <textarea class="phantom-input form-input" rows="5" required></textarea>
-                            <label class="form-label low-contrast-text" style="margin-bottom: 0; margin-top: 0.5rem;">Message</label>
-                        </div>
+        <div class="settings-card">
 
-                        <div class="form-group" style="display: flex; flex-direction: column-reverse;">
-                            <input type="email" class="phantom-input form-input" required>
-                            <label class="form-label low-contrast-text" style="font-size: 0.75rem; margin-bottom: 0; margin-top: 0.5rem;">Email Address *</label>
-                        </div>
-                        
-                        <div class="form-group" style="display: flex; flex-direction: column-reverse;">
-                            <input type="text" class="phantom-input form-input" required>
-                            <label class="form-label low-contrast-text" style="font-size: 0.75rem; margin-bottom: 0; margin-top: 0.5rem;">Full Name *</label>
-                        </div>
+            <form id="supportForm" class="form">
 
-                    </form>
+                <div class="form-group">
+                    <label for="supportName"
+                           class="form-label">
+                        Full name
+                    </label>
 
-                    <h1 style="margin-top: 2rem; margin-bottom: 0;">Support</h1>
+                    <input
+                        id="supportName"
+                        name="name"
+                        type="text"
+                        class="form-input"
+                        placeholder="Your name"
+                        required
+                    >
                 </div>
-            </div>
-        </main>
 
-        <footer class="footer">
-            <div class="footer-links">
-                <a href="contact.html" class="footer-link">Privacy Policy</a>
-                <a href="login.html" class="footer-link">Terms of Service</a>
-                <a href="checkout.html" class="footer-link">Settings</a>
-                <a href="index.html" class="footer-link">Help Center</a>
-            </div>
-            <p style="color: var(--text-muted); font-size: 0.85rem;">
-                &copy; 2026 Acme Corp. Premium SaaS. All rights reserved.
-            </p>
-        </footer>
+                <div class="form-group">
+                    <label for="supportEmail"
+                           class="form-label">
+                        Email address
+                    </label>
+
+                    <input
+                        id="supportEmail"
+                        name="email"
+                        type="email"
+                        class="form-input"
+                        placeholder="you@example.com"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="supportTopic"
+                           class="form-label">
+                        Topic
+                    </label>
+
+                    <select id="supportTopic"
+                            name="topic"
+                            class="form-input"
+                            required>
+                        <option value="">Select a topic</option>
+                        <option value="illusion">
+                            Question about an illusion
+                        </option>
+                        <option value="account">
+                            Account issue
+                        </option>
+                        <option value="technical">
+                            Technical issue
+                        </option>
+                        <option value="feedback">
+                            Feedback
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="supportMessage"
+                           class="form-label">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="supportMessage"
+                        name="message"
+                        class="form-input textarea"
+                        rows="6"
+                        placeholder="Tell us how we can help..."
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit"
+                        class="btn btn-primary btn-full">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-bottom">
+        <span>© 2026 Illusion → Intuition</span>
     </div>
+</footer>
+
 </body>
 </html>

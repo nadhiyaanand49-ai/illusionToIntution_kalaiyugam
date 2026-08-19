@@ -3,83 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcmeCorp Premium SaaS</title>
+    <meta name="description" content="Illusion to Intuition - Explore fascinating optical illusions and discover the science behind visual perception.">
+    <title>Illusion → Intuition | Explore Visual Perception</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
-    <div class="app-container">
-        
-        <nav class="navbar">
-            <a href="account.html" class="logo">AcmeCorp</a>
-            <div class="nav-links">
-                <!-- Links scrambled -->
-                <a href="contact.html" class="nav-link">Shop</a>
-                <a href="index.html" class="nav-link">Account</a>
-                <a href="products.html" class="nav-link">Support</a>
-                <a href="login.html" class="nav-link" style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 8px;">
-                    🛒 <span class="wishlist-counter" style="font-weight: 600;">0</span>
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Main navigation">
+            <a href="index.html" class="brand">
+                <span class="brand-mark">I</span>
+                <span>Illusion<span class="brand-arrow">→</span>Intuition</span>
+            </a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
+                ☰
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="products.html" class="nav-link">Explore</a>
+                <a href="account.html" class="nav-link">Account</a>
+                <a href="contact.html" class="nav-link">Support</a>
+                <a href="checkout.html" class="cart-link">
+                    <span aria-hidden="true">🛒</span>
+                    Cart
+                    <span class="cart-count">0</span>
                 </a>
             </div>
         </nav>
+    </header>
 
-        <main class="main-content">
-            <div style="position: relative; min-height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-                
-                <div style="z-index: 1; position: relative;">
-                    <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 2rem; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 2rem;">
-                        ✨ <span style="font-size: 0.85rem; font-weight: 500; color: var(--text-muted);">Introducing Acme AI v2.0</span>
+    <main>
+        <!-- HERO -->
+        <section class="hero container">
+            <div class="hero-content">
+                <span class="eyebrow">
+                    VISUAL PERCEPTION LAB
+                </span>
+
+                <h1>
+                    Your eyes see it.
+                    <span>Your brain interprets it.</span>
+                </h1>
+
+                <p>
+                    Explore fascinating optical illusions, test your perception,
+                    and discover why your brain sometimes sees something that
+                    isn't really there.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="products.html" class="btn btn-primary">
+                        Explore Illusions
+                        <span>→</span>
+                    </a>
+
+                    <a href="#featured" class="btn btn-secondary">
+                        See How It Works
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual" aria-label="Interactive optical illusion">
+                <div class="illusion-orbit orbit-one"></div>
+                <div class="illusion-orbit orbit-two"></div>
+                <div class="illusion-center">
+                    <div class="illusion-dot"></div>
+                </div>
+
+                <div class="hero-label label-one">PERCEPTION</div>
+                <div class="hero-label label-two">REALITY</div>
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <section class="stats-section container">
+            <div class="stat-card">
+                <strong>12+</strong>
+                <span>Visual experiments</span>
+            </div>
+
+            <div class="stat-card">
+                <strong>3</strong>
+                <span>Perception categories</span>
+            </div>
+
+            <div class="stat-card">
+                <strong>100%</strong>
+                <span>Interactive learning</span>
+            </div>
+        </section>
+
+        <!-- FEATURED -->
+        <section class="section container" id="featured">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">FEATURED</span>
+                    <h2>Train your intuition</h2>
+                </div>
+
+                <a href="products.html" class="text-link">
+                    View all →
+                </a>
+            </div>
+
+            <div class="featured-grid">
+
+                <article class="illusion-card">
+                    <div class="illusion-preview preview-contrast">
+                        <div class="contrast-circle"></div>
                     </div>
 
-                    <h1 style="font-size: 4.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.1; background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.6) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                        The operating system <br> for your future.
-                    </h1>
-                    
-                    <p class="low-contrast-text" style="font-size: 1.25rem; margin-bottom: 3rem; max-width: 600px; margin: 0 auto 3rem auto;">
-                        Experience the most advanced platform ever built. Unparalleled speed, absolute control, and zero friction.
+                    <div class="card-content">
+                        <span class="category-tag">COLOR</span>
+                        <h3>Simultaneous Contrast</h3>
+                        <p>
+                            Can the same gray look different depending on its
+                            surroundings?
+                        </p>
+
+                        <a href="detail.html?id=contrast" class="card-link">
+                            Explore illusion →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="illusion-card">
+                    <div class="illusion-preview preview-ebbinghaus">
+                        <div class="ebbing-group">
+                            <span class="outer large"></span>
+                            <span class="outer large"></span>
+                            <span class="outer large"></span>
+                            <span class="outer large"></span>
+                            <span class="center-circle"></span>
+                        </div>
+
+                        <div class="ebbing-group">
+                            <span class="outer small"></span>
+                            <span class="outer small"></span>
+                            <span class="outer small"></span>
+                            <span class="outer small"></span>
+                            <span class="center-circle"></span>
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <span class="category-tag">SIZE</span>
+                        <h3>Ebbinghaus Illusion</h3>
+                        <p>
+                            Two identical circles can appear to have different
+                            sizes.
+                        </p>
+
+                        <a href="detail.html?id=ebbinghaus" class="card-link">
+                            Explore illusion →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="illusion-card">
+                    <div class="illusion-preview preview-cafe">
+                        <div class="cafe-row">
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="cafe-row offset">
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="cafe-row">
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <span class="category-tag">GEOMETRY</span>
+                        <h3>Café Wall Illusion</h3>
+                        <p>
+                            Parallel lines can appear tilted because of their
+                            surrounding patterns.
+                        </p>
+
+                        <a href="detail.html?id=cafe-wall" class="card-link">
+                            Explore illusion →
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="section section-dark">
+            <div class="container">
+                <div class="section-heading centered">
+                    <div>
+                        <span class="eyebrow">THE PROCESS</span>
+                        <h2>From illusion to intuition</h2>
+                        <p>
+                            Don't just look at an illusion. Understand why
+                            your brain interprets it that way.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <span class="step-number">01</span>
+                        <h3>Observe</h3>
+                        <p>
+                            Look carefully at the visual pattern without
+                            assuming what you are supposed to see.
+                        </p>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">02</span>
+                        <h3>Question</h3>
+                        <p>
+                            Ask yourself why your perception differs from
+                            what is actually present.
+                        </p>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">03</span>
+                        <h3>Understand</h3>
+                        <p>
+                            Reveal the explanation and connect perception
+                            with the underlying visual principle.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section container">
+            <div class="cta-card">
+                <div>
+                    <span class="eyebrow">READY?</span>
+                    <h2>Challenge your perception.</h2>
+                    <p>
+                        Explore the complete collection of interactive
+                        illusions.
                     </p>
-
-                    <div style="display: flex; justify-content: center; gap: 1rem; position: relative; z-index: 10;">
-                        <!-- Button actions scrambled -->
-                        <button class="btn btn-primary chasing-button" onclick="window.location.href='contact.html'">
-                            Start Free Trial
-                        </button>
-                        
-                        <span class="btn btn-secondary fake-text" onclick="window.location.href='account.html'" style="padding: 0.875rem 2rem;">
-                            Explore Platform ➔
-                        </span>
-                    </div>
                 </div>
 
-                <div style="margin-top: 6rem; width: 100%; max-width: 800px; position: relative; z-index: 10;">
-                    <div class="card" style="padding: 3rem; text-align: center; background: rgba(236, 72, 153, 0.05); border-color: rgba(236, 72, 153, 0.2);">
-                        <h2 style="font-size: 2rem; margin-bottom: 1rem;">Join the Private Beta</h2>
-                        <p style="color: var(--text-muted); margin-bottom: 2rem;">Spots are extremely limited. Secure yours today.</p>
-                        
-                        <!-- Form submits to products -->
-                        <form onsubmit="event.preventDefault(); setTimeout(() => window.location.href='products.html', 1000);" style="display: flex; gap: 1rem; max-width: 400px; margin: 0 auto;">
-                            <input type="email" class="phantom-input form-input" placeholder="Enter your email..." required style="flex-grow: 1;">
-                            <button type="submit" class="btn btn-primary" style="background: var(--accent);">
-                                Join Now
-                            </button>
-                        </form>
-                    </div>
-                </div>
+                <a href="products.html" class="btn btn-primary">
+                    Start Exploring →
+                </a>
             </div>
-        </main>
+        </section>
+    </main>
 
-        <footer class="footer">
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <a href="index.html" class="brand">
+                    <span class="brand-mark">I</span>
+                    <span>Illusion<span class="brand-arrow">→</span>Intuition</span>
+                </a>
+                <p>
+                    Understanding perception through interactive experiences.
+                </p>
+            </div>
+
             <div class="footer-links">
-                <a href="contact.html" class="footer-link">Privacy Policy</a>
-                <a href="login.html" class="footer-link">Terms of Service</a>
-                <a href="checkout.html" class="footer-link">Settings</a>
-                <a href="index.html" class="footer-link">Help Center</a>
+                <a href="products.html">Explore</a>
+                <a href="account.html">Account</a>
+                <a href="contact.html">Support</a>
+                <a href="checkout.html">Cart</a>
             </div>
-            <p style="color: var(--text-muted); font-size: 0.85rem;">
-                &copy; 2026 Acme Corp. Premium SaaS. All rights reserved.
-            </p>
-        </footer>
+        </div>
 
-    </div>
+        <div class="container footer-bottom">
+            <span>© 2026 Illusion → Intuition</span>
+            <span>Built for curious minds.</span>
+        </div>
+    </footer>
 </body>
 </html>
