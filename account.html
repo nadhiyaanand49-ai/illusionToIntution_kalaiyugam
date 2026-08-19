@@ -3,87 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcmeCorp Account</title>
+    <title>Account | Illusion → Intuition</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
-    <div class="app-container">
-        <nav class="navbar">
-            <a href="account.html" class="logo">AcmeCorp</a>
-            <div class="nav-links">
-                <a href="contact.html" class="nav-link">Shop</a>
-                <a href="index.html" class="nav-link">Account</a>
-                <a href="products.html" class="nav-link">Support</a>
-                <a href="login.html" class="nav-link" style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 8px;">
-                    🛒 <span class="wishlist-counter" style="font-weight: 600;">0</span>
-                </a>
-            </div>
-        </nav>
 
-        <main class="main-content">
-            <div style="display: flex; gap: 3rem; flex-wrap: wrap-reverse;">
-                <main style="flex: 1 1 500px;">
-                    <h1 style="margin-bottom: 2rem;">Account Settings</h1>
-                    
-                    <!-- We'll just show both sections stacked for vanilla HTML simplicity, 
-                         which makes the layout even more confusing! -->
-                    
-                    <div class="card" style="margin-bottom: 2rem;">
-                        <h2 style="font-size: 1.25rem; margin-bottom: 1.5rem;">Preferences</h2>
-                        
-                        <div style="display: flex; align-items: center; justify-content: space-between; padding: 1rem; background: rgba(255,255,255,0.02); border-radius: 8px; margin-bottom: 1rem;">
-                            <div>
-                                <strong>Email Notifications</strong>
-                                <p class="low-contrast-text" style="font-size: 0.85rem;">Receive updates and marketing.</p>
-                            </div>
-                            <label style="display: flex; align-items: center; cursor: pointer;">
-                                <input type="checkbox" checked style="width: 20px; height: 20px;">
+<header class="site-header">
+    <nav class="navbar container">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">I</span>
+            <span>Illusion<span class="brand-arrow">→</span>Intuition</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            ☰
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="products.html" class="nav-link">Explore</a>
+            <a href="account.html" class="nav-link active">Account</a>
+            <a href="contact.html" class="nav-link">Support</a>
+            <a href="checkout.html" class="cart-link">
+                🛒 Cart
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <section class="page-header container">
+        <span class="eyebrow">ACCOUNT</span>
+        <h1>Your preferences.</h1>
+        <p>
+            Manage your profile and experience settings.
+        </p>
+    </section>
+
+    <section class="container account-layout">
+
+        <aside class="account-sidebar">
+            <div class="profile-summary">
+                <div class="avatar">G</div>
+                <div>
+                    <strong>Guest User</strong>
+                    <span>Exploring perception</span>
+                </div>
+            </div>
+
+            <nav class="account-nav">
+                <a href="#profile" class="active">Profile</a>
+                <a href="#preferences">Preferences</a>
+                <a href="#activity">Activity</a>
+            </nav>
+        </aside>
+
+        <div class="account-content">
+
+            <section class="settings-card" id="profile">
+                <div class="settings-header">
+                    <div>
+                        <span class="eyebrow">PROFILE</span>
+                        <h2>Personal information</h2>
+                    </div>
+                </div>
+
+                <form id="profileForm" class="form">
+
+                    <div class="two-column">
+                        <div class="form-group">
+                            <label for="fullName" class="form-label">
+                                Full name
                             </label>
+
+                            <input
+                                id="fullName"
+                                type="text"
+                                class="form-input"
+                                value="Guest User"
+                                required
+                            >
                         </div>
-                        
-                        <!-- Chasing button logs you out -->
-                        <button class="btn btn-primary chasing-button" onclick="window.location.href='login.html'">
-                            Save Changes
-                        </button>
-                    </div>
 
-                    <div class="card">
-                        <h2 style="font-size: 1.25rem; margin-bottom: 1.5rem;">Billing History</h2>
-                        <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px;">
-                            <p class="low-contrast-text" style="font-size: 0.9rem;">Invoice #884422</p>
-                            
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                                <span style="font-size: 0.9rem;">Next charge on Nov 1, 2026</span>
-                                <!-- Fake button -->
-                                <span class="fake-button" onclick="window.location.href='checkout.html'">
-                                    Cancel Subscription
-                                </span>
-                            </div>
+                        <div class="form-group">
+                            <label for="accountEmail" class="form-label">
+                                Email address
+                            </label>
+
+                            <input
+                                id="accountEmail"
+                                type="email"
+                                class="form-input"
+                                value="guest@example.com"
+                                required
+                            >
                         </div>
                     </div>
-                </main>
 
-                <aside style="flex: 0 0 250px;">
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <button class="btn btn-primary chasing-button" style="justify-content: flex-start;">Billing</button>
-                        <button class="btn btn-secondary chasing-button" style="justify-content: flex-start;">Profile</button>
+                    <button type="submit"
+                            class="btn btn-primary">
+                        Save Changes
+                    </button>
+                </form>
+            </section>
+
+            <section class="settings-card" id="preferences">
+                <div class="settings-header">
+                    <div>
+                        <span class="eyebrow">PREFERENCES</span>
+                        <h2>Experience settings</h2>
                     </div>
-                </aside>
-            </div>
-        </main>
+                </div>
 
-        <footer class="footer">
-            <div class="footer-links">
-                <a href="contact.html" class="footer-link">Privacy Policy</a>
-                <a href="login.html" class="footer-link">Terms of Service</a>
-                <a href="checkout.html" class="footer-link">Settings</a>
-                <a href="index.html" class="footer-link">Help Center</a>
-            </div>
-            <p style="color: var(--text-muted); font-size: 0.85rem;">
-                &copy; 2026 Acme Corp. Premium SaaS. All rights reserved.
-            </p>
-        </footer>
+                <div class="preference-row">
+                    <div>
+                        <strong>Learning reminders</strong>
+                        <p>
+                            Receive reminders to explore new illusions.
+                        </p>
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox"
+                               id="reminderToggle"
+                               checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="preference-row">
+                    <div>
+                        <strong>Reduced motion</strong>
+                        <p>
+                            Reduce non-essential interface animations.
+                        </p>
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox"
+                               id="motionToggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </section>
+
+            <section class="settings-card" id="activity">
+                <div class="settings-header">
+                    <div>
+                        <span class="eyebrow">ACTIVITY</span>
+                        <h2>Your learning journey</h2>
+                    </div>
+                </div>
+
+                <div class="activity-grid">
+                    <div class="activity-stat">
+                        <strong>4</strong>
+                        <span>Illusions explored</span>
+                    </div>
+
+                    <div class="activity-stat">
+                        <strong>3</strong>
+                        <span>Categories viewed</span>
+                    </div>
+
+                    <div class="activity-stat">
+                        <strong>1</strong>
+                        <span>Explanation revealed</span>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-bottom">
+        <span>© 2026 Illusion → Intuition</span>
+        <span>Built for curious minds.</span>
     </div>
+</footer>
+
 </body>
 </html>

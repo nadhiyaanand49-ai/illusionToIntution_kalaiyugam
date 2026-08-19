@@ -3,68 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcmeCorp Login</title>
+    <title>Sign In | Illusion → Intuition</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
-<body>
-    <div class="app-container">
-        <nav class="navbar">
-            <a href="account.html" class="logo">AcmeCorp</a>
-            <div class="nav-links">
-                <a href="contact.html" class="nav-link">Shop</a>
-                <a href="index.html" class="nav-link">Account</a>
-                <a href="products.html" class="nav-link">Support</a>
-                <a href="login.html" class="nav-link" style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 8px;">
-                    🛒 <span class="wishlist-counter" style="font-weight: 600;">0</span>
-                </a>
-            </div>
+
+<body class="auth-page">
+
+    <header class="site-header">
+        <nav class="navbar container">
+            <a href="index.html" class="brand">
+                <span class="brand-mark">I</span>
+                <span>Illusion<span class="brand-arrow">→</span>Intuition</span>
+            </a>
+
+            <a href="index.html" class="nav-back">
+                ← Back to home
+            </a>
         </nav>
+    </header>
 
-        <main class="main-content">
-            <div style="max-width: 400px; margin: 4rem auto;">
-                <div class="card" style="display: flex; flex-direction: column-reverse;">
-                    
-                    <form style="display: flex; flex-direction: column-reverse;" onsubmit="event.preventDefault(); this.reset();">
-                        
-                        <div style="display: flex; flex-direction: column-reverse; gap: 1rem; margin-top: 2rem;">
-                            <!-- Scrambled actions & fake text -->
-                            <button type="button" class="btn btn-secondary fake-text" onclick="window.location.href='account.html'">
-                                Create Account
-                            </button>
-                            
-                            <button type="submit" class="btn btn-primary chasing-button">
-                                Sign In
-                            </button>
-                        </div>
+    <main class="auth-container">
 
-                        <div class="form-group" style="display: flex; flex-direction: column-reverse;">
-                            <input type="password" class="phantom-input form-input mirage-input typo-generator">
-                            <label class="form-label low-contrast-text" style="margin-bottom: 0; margin-top: 0.5rem;">Password</label>
-                        </div>
+        <div class="auth-card">
 
-                        <div class="form-group" style="display: flex; flex-direction: column-reverse;">
-                            <input type="email" class="phantom-input form-input mirage-input typo-generator">
-                            <label class="form-label low-contrast-text" style="margin-bottom: 0; margin-top: 0.5rem;">Email</label>
-                        </div>
-                    </form>
+            <div class="auth-header">
+                <span class="brand-mark large">I</span>
 
-                    <h2 style="margin-top: 2rem; margin-bottom: 0; text-align: center;">Welcome Back</h2>
+                <span class="eyebrow">WELCOME BACK</span>
+
+                <h1>Sign in to your account</h1>
+
+                <p>
+                    Continue exploring your saved experiences.
+                </p>
+            </div>
+
+            <form id="loginForm" class="form">
+
+                <div class="form-group">
+                    <label for="email" class="form-label">
+                        Email address
+                    </label>
+
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        class="form-input"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
                 </div>
-            </div>
-        </main>
 
-        <footer class="footer">
-            <div class="footer-links">
-                <a href="contact.html" class="footer-link">Privacy Policy</a>
-                <a href="login.html" class="footer-link">Terms of Service</a>
-                <a href="checkout.html" class="footer-link">Settings</a>
-                <a href="index.html" class="footer-link">Help Center</a>
+                <div class="form-group">
+                    <div class="label-row">
+                        <label for="password" class="form-label">
+                            Password
+                        </label>
+
+                        <button type="button"
+                                class="text-button"
+                                id="togglePassword">
+                            Show
+                        </button>
+                    </div>
+
+                    <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        class="form-input"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        minlength="6"
+                        required
+                    >
+                </div>
+
+                <div class="checkbox-row">
+                    <label>
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember me</span>
+                    </label>
+
+                    <button type="button"
+                            class="text-button"
+                            id="forgotPassword">
+                        Forgot password?
+                    </button>
+                </div>
+
+                <button type="submit"
+                        class="btn btn-primary btn-full">
+                    Sign In
+                </button>
+
+            </form>
+
+            <div class="auth-divider">
+                <span>or</span>
             </div>
-            <p style="color: var(--text-muted); font-size: 0.85rem;">
-                &copy; 2026 Acme Corp. Premium SaaS. All rights reserved.
+
+            <a href="account.html"
+               class="btn btn-secondary btn-full">
+                Continue as Guest
+            </a>
+
+            <p class="auth-footer">
+                New here?
+                <a href="account.html">Create an account</a>
             </p>
-        </footer>
-    </div>
+
+        </div>
+
+    </main>
+
+    <footer class="minimal-footer">
+        © 2026 Illusion → Intuition
+    </footer>
+
 </body>
 </html>
